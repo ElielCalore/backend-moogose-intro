@@ -11,6 +11,9 @@ app.use(express.json());
 const userRouter = require("./router/user.router");
 app.use("/user", userRouter);
 
+const jobRouter = require("./router/job.router");
+app.use("/job", jobRouter);
+
 app.listen(Number(process.env.PORT), () => {
   console.log(`Server up and running at port ${process.env.PORT}`);
 });
