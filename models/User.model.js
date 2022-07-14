@@ -1,6 +1,8 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, Types } = require("mongoose");
 
 const userSchema = new Schema({
+  candidacies: { type: Types.ObjectId, ref: "Job" },
+  vagas: [{ type: Types.ObjectId, ref: "Job" }],
   name: { type: String, required: true, trim: true },
   about: { type: String, required: true, trim: true },
   other: { type: String, required: true, trim: true },
